@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 10 Subjects</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Silence - Class 10 Subjects</h1>
+    </header>
+
+    <h2>Select the subject you want to study:</h2>
+
+    <div class="class-buttons">
+        <button class="class-btn" onclick="redirectTo('math')">Mathematics</button>
+        <button class="class-btn" onclick="window.location.href='science.html'">Science</button>
+        <button class="class-btn" onclick="redirectTo('social')">Social Science</button>
+        <button class="class-btn" onclick="redirectTo('english')">English</button>
+        <button class="class-btn" onclick="redirectTo('hindi')">Hindi</button>
+    </div>
+
+    <div class="about">
+        <p>Explore the subjects with detailed explanations and AI-powered assistance.</p>
+        <button class="about-btn" onclick="window.location.href='index.html'">Back to Home</button>
+    </div>
+
+    <script>
+        function redirectTo(subject) {
+            window.location.href = 'item_not.html';
+        }
+    </script>
+</body>
+</html>

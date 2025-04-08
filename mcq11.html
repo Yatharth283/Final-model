@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Heredity and Evolution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            display: none;
+            text-align: center;
+        }
+        .result button {
+            background-color: #28a745;
+        }
+        .try-again-button {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+        <div class="quiz-container">
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Why does the Sun appear reddish early in the morning?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q1" value="a"> (a) Due to atmospheric refraction</li>
+                    <li><input type="radio" name="q1" value="b"> (b) Due to scattering of blue light</li>
+                    <li><input type="radio" name="q1" value="c"> (c) Due to absorption of red light by the atmosphere</li>
+                    <li><input type="radio" name="q1" value="d"> (d) Due to the position of the sun near the horizon</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>2. Why does the sky appear dark instead of blue to an astronaut?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q2" value="a"> (a) Absence of atmosphere in space</li>
+                    <li><input type="radio" name="q2" value="b"> (b) Scattering of light by cosmic dust</li>
+                    <li><input type="radio" name="q2" value="c"> (c) Reflection of light by spacecraft</li>
+                    <li><input type="radio" name="q2" value="d"> (d) Absence of sunlight in space</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>3. Why does the Sun appear white at noon?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q3" value="a"> (a) All colors of light are scattered equally</li>
+                    <li><input type="radio" name="q3" value="b"> (b) The atmosphere scatters shorter wavelengths more</li>
+                    <li><input type="radio" name="q3" value="c"> (c) The path length of sunlight through the atmosphere is shorter</li>
+                    <li><input type="radio" name="q3" value="d"> (d) The Sun's intensity is highest at noon</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>4. What is the near point of a normal human eye?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q4" value="a"> (a) 25 cm</li>
+                    <li><input type="radio" name="q4" value="b"> (b) 50 cm</li>
+                    <li><input type="radio" name="q4" value="c"> (c) 75 cm</li>
+                    <li><input type="radio" name="q4" value="d"> (d) 100 cm</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>5. Which of the following defects of vision is corrected by using a concave lens?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q5" value="a"> (a) Myopia</li>
+                    <li><input type="radio" name="q5" value="b"> (b) Hypermetropia</li>
+                    <li><input type="radio" name="q5" value="c"> (c) Presbyopia</li>
+                    <li><input type="radio" name="q5" value="d"> (d) Astigmatism</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>6. What is the cause of the twinkling of stars?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q6" value="a"> (a) Reflection of light by atmospheric particles</li>
+                    <li><input type="radio" name="q6" value="b"> (b) Scattering of light by atmospheric particles</li>
+                    <li><input type="radio" name="q6" value="c"> (c) Atmospheric refraction of starlight</li>
+                    <li><input type="radio" name="q6" value="d"> (d) Absorption of starlight by the atmosphere</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>7. Which phenomenon is responsible for the formation of a rainbow?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q7" value="a"> (a) Reflection</li>
+                    <li><input type="radio" name="q7" value="b"> (b) Refraction and dispersion</li>
+                    <li><input type="radio" name="q7" value="c"> (c) Refraction, dispersion, and total internal reflection</li>
+                    <li><input type="radio" name="q7" value="d"> (d) Scattering</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>8. What is the function of the iris in the human eye?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q8" value="a"> (a) Regulates the size of the pupil</li>
+                    <li><input type="radio" name="q8" value="b"> (b) Focuses light onto the retina</li>
+                    <li><input type="radio" name="q8" value="c"> (c) Detects light intensity</li>
+                    <li><input type="radio" name="q8" value="d"> (d) Transmits visual information to the brain</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>9. Which color of light is deviated the most when passing through a glass prism?</p>
+                <ul class="options">
+                    <li><input type="radio" name="q9" value="a"> (a) Red</li>
+                    <li><input type="radio" name="q9" value="b"> (b) Green</li>
+                    <li><input type="radio" name="q9" value="c"> (c) Blue</li>
+                    <li><input type="radio" name="q9" value="d"> (d) Violet</li>
+                </ul>
+            </div>
+
+            <div class="question">
+                <p>10. The image formed by a concave lens is always:</p>
+                <ul class="options">
+                    <li><input type="radio" name="q10" value="a"> (a) Real and inverted</li>
+                    <li><input type="radio" name="q10" value="b"> (b) Virtual and erect</li>
+                    <li><input type="radio" name="q10" value="c"> (c) Real and erect</li>
+                    <li><input type="radio" name="q10" value="d"> (d) Virtual and inverted</li>
+                </ul>
+            </div>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+
+        </form>
+
+
+        <div class="result">
+            <p id="resultText"></p>
+            <button id="completedButton" class="completedButton" onclick="window.location.href='science.html'">Completed</button>
+            <button id="tryAgainButton" class="try-again-button" onclick="location.reload()">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'b',
+                q2: 'a',
+                q3: 'c',
+                q4: 'a',
+                q5: 'a',
+                q6: 'c',
+                q7: 'c',
+                q8: 'a',
+                q9: 'd',
+                q10: 'b'
+            };
+
+            for (let i = 1; i <= 10; i++) {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            const resultText = document.getElementById("resultText");
+            const completedButton = document.getElementById("completedButton");
+            const tryAgainButton = document.getElementById("tryAgainButton");
+
+            if (score >= 6) {
+                resultText.innerHTML = `You scored ${score} out of 10. Congratulations!`;
+                completedButton.style.display = "inline-block";
+                tryAgainButton.style.display = "none";
+            } else {
+                resultText.innerHTML = `You scored ${score} out of 10. Try again!`;
+                completedButton.style.display = "none";
+                tryAgainButton.style.display = "inline-block";
+            }
+
+            document.querySelector(".result").style.display = "block";
+        }
+    </script>
+</body>
+</html>

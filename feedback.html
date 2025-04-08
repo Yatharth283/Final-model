@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Feedback</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>All Feedback</h1>
+    </header>
+
+    <main>
+        <section class="feedback">
+            <h2>All User Feedback</h2>
+            <ul id="allFeedbackList"></ul>
+            <button id="backButton">Go Back</button>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const allFeedbackList = document.getElementById("allFeedbackList");
+            const backButton = document.getElementById("backButton");
+
+            // Load all feedback
+            function loadAllFeedback() {
+                const feedbacks = JSON.parse(localStorage.getItem("feedbacks")) || [];
+                allFeedbackList.innerHTML = "";
+                feedbacks.forEach(feedback => {
+                    const li = document.createElement("li");
+                    li.textContent = feedback;
+                    allFeedbackList.appendChild(li);
+                });
+            }
+
+            backButton.addEventListener("click", function () {
+                window.location.href = "index.html"; // Go back to the main page
+            });
+
+            loadAllFeedback();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs - Control and Coordination</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #0d47a1;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .feedback {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+        button {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+    <script>
+        let score = 0;
+        function checkAnswer(question, correctAnswer) {
+            let selected = document.querySelector(`input[name="${question}"]:checked`);
+            let feedback = document.getElementById(`${question}-feedback`);
+            if (selected) {
+                if (selected.value === correctAnswer) {
+                    feedback.innerHTML = "Correct Answer!";
+                    feedback.className = "feedback correct";
+                    score++;
+                } else {
+                    feedback.innerHTML = `Wrong Answer! Correct answer is: ${correctAnswer}`;
+                    feedback.className = "feedback wrong";
+                }
+            }
+        }
+        
+        function showResult() {
+            let resultContainer = document.getElementById("result-container");
+            resultContainer.innerHTML = `<p>Your Score: ${score}/11</p>`;
+            let submitButton = document.getElementById("submit-button");
+            submitButton.innerText = "Completed";
+            submitButton.setAttribute("onclick", "location.href='science.html'");
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>MCQs - Control and Coordination</h2>
+        <script>
+            const questions = [
+                {q: "Which plant hormone promotes dormancy in seeds and buds?", options: ["Auxin", "Gibberellin", "Cytokinin", "Abscisic acid"], answer: "d"},
+                {q: "The growth of tendrils in pea plants is due to:", options: ["Effect of gravity", "Effect of chemicals", "Rapid cell divisions in tendril cells that are away from the support", "Rapid cell division in tendril cells in contact with the support"], answer: "c"},
+                {q: "Which part of the human brain controls posture and balance?", options: ["Cerebrum", "Cerebellum", "Medulla oblongata", "Hypothalamus"], answer: "b"},
+                {q: "What is the function of the medulla oblongata?", options: ["Controls thinking and reasoning", "Regulates involuntary actions", "Regulates vision", "Regulates body temperature"], answer: "b"},
+                {q: "Which neuron carries signals from the brain to muscles?", options: ["Sensory neuron", "Motor neuron", "Interneuron", "All of the above"], answer: "b"},
+                {q: "Which gland secretes insulin?", options: ["Pituitary", "Thyroid", "Pancreas", "Adrenal"], answer: "c"},
+                {q: "Which hormone regulates the body's metabolism?", options: ["Insulin", "Thyroxine", "Adrenaline", "Growth hormone"], answer: "b"},
+                {q: "What is the main function of reflex action?", options: ["Conscious thinking", "Voluntary movement", "Quick response to stimuli", "Memory recall"], answer: "c"},
+                {q: "Which of these is a plant movement due to touch?", options: ["Phototropism", "Thigmotropism", "Geotropism", "Hydrotropism"], answer: "b"},
+                {q: "Which hormone controls stress response?", options: ["Insulin", "Adrenaline", "Thyroxine", "Estrogen"], answer: "b"},
+                {q: "Which part of the neuron receives signals?", options: ["Axon", "Dendrites", "Myelin", "Cell body"], answer: "b"}
+            ];
+            
+            document.write('<div>');
+            questions.forEach((q, index) => {
+                document.write(`<div class='question'>${index + 1}. ${q.q}<br>`);
+                q.options.forEach((opt, optIndex) => {
+                    const optValue = String.fromCharCode(97 + optIndex);
+                    document.write(`<input type='radio' name='q${index + 1}' value='${optValue}'> ${optValue}) ${opt}<br>`);
+                });
+                document.write(`<button onclick="checkAnswer('q${index + 1}', '${q.answer}')">Check Answer</button>`);
+                document.write(`<div id='q${index + 1}-feedback' class='feedback'></div></div>`);
+            });
+            document.write('</div>');
+        </script>
+        <button onclick="location.href='faq7.html'">Previous Page</button>
+        <button id="submit-button" onclick="showResult()">Submit</button>
+        <div id="result-container"></div>
+    </div>
+</body>
+</html>

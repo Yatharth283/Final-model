@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs - Our Environment</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            box-shadow: 0px 0px 10px rgba(0, 162, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #4fc3f7;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1565c0;
+        }
+
+        #submitBtn, #tryAgainBtn, #completedBtn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MCQs - Our Environment</h1>
+    </header>
+
+    <section class="content">
+        <h2>Answer the following MCQs:</h2>
+
+        <form id="quizForm">
+            <div class="question">
+                <p>1. Which of the following is a biodegradable waste?</p>
+                <label><input type="radio" name="q1" value="A"> A) Plastic</label>
+                <label><input type="radio" name="q1" value="B"> B) Glass</label>
+                <label><input type="radio" name="q1" value="C"> C) Paper</label>
+                <label><input type="radio" name="q1" value="D"> D) Metal</label>
+            </div>
+
+            <div class="question">
+                <p>2. The major source of air pollution is?</p>
+                <label><input type="radio" name="q2" value="A"> A) Industries</label>
+                <label><input type="radio" name="q2" value="B"> B) Forests</label>
+                <label><input type="radio" name="q2" value="C"> C) Agriculture</label>
+                <label><input type="radio" name="q2" value="D"> D) Natural disasters</label>
+            </div>
+
+            <div class="question">
+                <p>3. The ozone layer protects us from?</p>
+                <label><input type="radio" name="q3" value="A"> A) Infrared rays</label>
+                <label><input type="radio" name="q3" value="B"> B) Ultraviolet rays</label>
+                <label><input type="radio" name="q3" value="C"> C) X-rays</label>
+                <label><input type="radio" name="q3" value="D"> D) Visible light</label>
+            </div>
+
+            <div class="question">
+                <p>4. What is the full form of 3Rs in waste management?</p>
+                <label><input type="radio" name="q4" value="A"> A) Reduce, Reuse, Recycle</label>
+                <label><input type="radio" name="q4" value="B"> B) Renew, Reuse, Recycle</label>
+                <label><input type="radio" name="q4" value="C"> C) Refuse, Reuse, Reduce</label>
+                <label><input type="radio" name="q4" value="D"> D) Reuse, Reduce, Replace</label>
+            </div>
+
+            <div class="question">
+                <p>5. Which gas is responsible for global warming?</p>
+                <label><input type="radio" name="q5" value="A"> A) Oxygen</label>
+                <label><input type="radio" name="q5" value="B"> B) Carbon dioxide</label>
+                <label><input type="radio" name="q5" value="C"> C) Nitrogen</label>
+                <label><input type="radio" name="q5" value="D"> D) Hydrogen</label>
+            </div>
+            <div class="question">
+    <p>6. Which of the following is a non-biodegradable substance?</p>
+    <label><input type="radio" name="q6" value="A"> A) Vegetable peels</label>
+    <label><input type="radio" name="q6" value="B"> B) Cotton cloth</label>
+    <label><input type="radio" name="q6" value="C"> C) Plastic</label>
+    <label><input type="radio" name="q6" value="D"> D) Paper</label>
+</div>
+
+<div class="question">
+    <p>7. Which trophic level in a food chain has the maximum energy?</p>
+    <label><input type="radio" name="q7" value="A"> A) Secondary consumers</label>
+    <label><input type="radio" name="q7" value="B"> B) Tertiary consumers</label>
+    <label><input type="radio" name="q7" value="C"> C) Decomposers</label>
+    <label><input type="radio" name="q7" value="D"> D) Producers</label>
+</div>
+
+<div class="question">
+    <p>8. Which of these organisms helps in decomposing waste?</p>
+    <label><input type="radio" name="q8" value="A"> A) Earthworm</label>
+    <label><input type="radio" name="q8" value="B"> B) Fungi</label>
+    <label><input type="radio" name="q8" value="C"> C) Snakes</label>
+    <label><input type="radio" name="q8" value="D"> D) Grasshoppers</label>
+</div>
+
+<div class="question">
+    <p>9. Which process is responsible for maintaining the oxygen and carbon dioxide balance?</p>
+    <label><input type="radio" name="q9" value="A"> A) Respiration</label>
+    <label><input type="radio" name="q9" value="B"> B) Photosynthesis</label>
+    <label><input type="radio" name="q9" value="C"> C) Decomposition</label>
+    <label><input type="radio" name="q9" value="D"> D) Fermentation</label>
+</div>
+
+<div class="question">
+    <p>10. The final consumers in a food chain are usually?</p>
+    <label><input type="radio" name="q10" value="A"> A) Carnivores</label>
+    <label><input type="radio" name="q10" value="B"> B) Herbivores</label>
+    <label><input type="radio" name="q10" value="C"> C) Primary consumers</label>
+    <label><input type="radio" name="q10" value="D"> D) Omnivores</label>
+</div>
+
+<div class="question">
+    <p>11. Which pollutant is responsible for acid rain?</p>
+    <label><input type="radio" name="q11" value="A"> A) Sulfur dioxide</label>
+    <label><input type="radio" name="q11" value="B"> B) Oxygen</label>
+    <label><input type="radio" name="q11" value="C"> C) Nitrogen</label>
+    <label><input type="radio" name="q11" value="D"> D) Methane</label>
+</div>
+
+<div class="question">
+    <p>12. The term "biomagnification" refers to?</p>
+    <label><input type="radio" name="q12" value="A"> A) Increase in organism size</label>
+    <label><input type="radio" name="q12" value="B"> B) Increase in pollutant concentration in a food chain</label>
+    <label><input type="radio" name="q12" value="C"> C) Increase in oxygen levels</label>
+    <label><input type="radio" name="q12" value="D"> D) Decrease in biodiversity</label>
+</div>
+
+<div class="question">
+    <p>13. Which of these is a primary consumer?</p>
+    <label><input type="radio" name="q13" value="A"> A) Snake</label>
+    <label><input type="radio" name="q13" value="B"> B) Deer</label>
+    <label><input type="radio" name="q13" value="C"> C) Tiger</label>
+    <label><input type="radio" name="q13" value="D"> D) Eagle</label>
+</div>
+
+<div class="question">
+    <p>14. Which of the following is a renewable resource?</p>
+    <label><input type="radio" name="q14" value="A"> A) Coal</label>
+    <label><input type="radio" name="q14" value="B"> B) Petroleum</label>
+    <label><input type="radio" name="q14" value="C"> C) Natural Gas</label>
+    <label><input type="radio" name="q14" value="D"> D) Solar energy</label>
+</div>
+
+<div class="question">
+    <p>15. Deforestation leads to?</p>
+    <label><input type="radio" name="q15" value="A"> A) Increase in rainfall</label>
+    <label><input type="radio" name="q15" value="B"> B) Increase in oxygen levels</label>
+    <label><input type="radio" name="q15" value="C"> C) Increase in biodiversity</label>
+    <label><input type="radio" name="q15" value="D"> D) Soil erosion</label>
+</div>
+
+
+            <!-- Add more questions (6 to 15) here -->
+            
+            <!-- Submit Button -->
+            <button type="button" id="submitBtn" class="btn" onclick="checkScore()">Submit</button>
+
+            <!-- Result Display -->
+            <div id="result"></div>
+
+            <!-- Buttons for Completion -->
+            <button type="button" id="tryAgainBtn" class="btn" style="display:none;" onclick="window.location.reload()">Try Again</button>
+            <a href="science.html" id="completedBtn" class="btn" style="display:none;">Completed</a>
+        </form>
+    </section>
+
+    <script>
+        function checkScore() {
+            let answers = {
+                "q1": "C", 
+                "q2": "A", 
+                "q3": "B", 
+                "q4": "A", 
+                "q5": "B", 
+                "q6": "C", 
+                "q7": "D", 
+                "q8": "B", 
+                "q9": "B", 
+                "q10": "A", 
+                "q11": "A", 
+                "q12": "B", 
+                "q13": "B", 
+                "q14": "D", 
+                "q15": "D"
+
+            };
+
+            let score = 0;
+            let totalQuestions = 15;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            let resultText = `Your score: ${score}/${totalQuestions}`;
+            document.getElementById("result").innerHTML = resultText;
+
+            if (score >= 8) {
+                document.getElementById("completedBtn").style.display = "block";
+                document.getElementById("tryAgainBtn").style.display = "none";
+            } else {
+                document.getElementById("tryAgainBtn").style.display = "block";
+                document.getElementById("completedBtn").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

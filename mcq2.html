@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Acids, Bases, and Salts</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            box-shadow: 0px 0px 10px rgba(0, 162, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #4fc3f7;
+            text-align: center;
+        }
+
+        .question {
+            margin: 15px 0;
+        }
+
+        .feedback {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .correct {
+            color: #4CAF50;
+        }
+
+        .wrong {
+            color: #FF5252;
+        }
+
+        /* Button Styles */
+        .btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #1565c0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MCQ Quiz - Acids, Bases, and Salts</h1>
+    </header>
+
+    <section class="content">
+        <h2>Answer the following questions:</h2>
+
+        <form id="quizForm">
+            <div class="question">
+                <p>1. What is the chemical formula of washing soda?</p>
+                <label><input type="radio" name="q1" value="A"> A) NaHCO₃</label><br>
+                <label><input type="radio" name="q1" value="B"> B) Na₂CO₃</label><br>
+                <label><input type="radio" name="q1" value="C"> C) NaCl</label><br>
+                <label><input type="radio" name="q1" value="D"> D) K₂CO₃</label>
+                <p class="feedback hidden" id="feedback1"></p>
+            </div>
+
+            <div class="question">
+                <p>2. What is the pH of pure water?</p>
+                <label><input type="radio" name="q2" value="A"> A) 5</label><br>
+                <label><input type="radio" name="q2" value="B"> B) 7</label><br>
+                <label><input type="radio" name="q2" value="C"> C) 9</label><br>
+                <label><input type="radio" name="q2" value="D"> D) 11</label>
+                <p class="feedback hidden" id="feedback2"></p>
+            </div>
+
+            <!-- Add more questions here -->
+            <div class="question">
+                <p>3. What is the color of phenolphthalein in a basic solution?</p>
+                <label><input type="radio" name="q3" value="A"> A) Red</label><br>
+                <label><input type="radio" name="q3" value="B"> B) Blue</label><br>
+                <label><input type="radio" name="q3" value="C"> C) Pink</label><br>
+                <label><input type="radio" name="q3" value="D"> D) Yellow</label>
+                <p class="feedback hidden" id="feedback3"></p>
+            </div>
+                        <div class="question">
+                <p>4. Which acid is present in lemon?</p>
+                <label><input type="radio" name="q4" value="A"> A) Acetic acid</label><br>
+                <label><input type="radio" name="q4" value="B"> B) Hydrochloric acid</label><br>
+                <label><input type="radio" name="q4" value="C"> C) Citric acid</label><br>
+                <label><input type="radio" name="q4" value="D"> D) Sulfuric acid</label>
+                <p class="feedback hidden" id="feedback4"></p>
+            </div>
+
+            <div class="question">
+                <p>5. What is the chemical formula of baking soda?</p>
+                <label><input type="radio" name="q5" value="A"> A) Na₂CO₃</label><br>
+                <label><input type="radio" name="q5" value="B"> B) NaOH</label><br>
+                <label><input type="radio" name="q5" value="C"> C) NaHCO₃</label><br>
+                <label><input type="radio" name="q5" value="D"> D) K₂CO₃</label>
+                <p class="feedback hidden" id="feedback5"></p>
+            </div>
+
+            <div class="question">
+                <p>6. What is the effect of an acid on blue litmus paper?</p>
+                <label><input type="radio" name="q6" value="A"> A) Turns red</label><br>
+                <label><input type="radio" name="q6" value="B"> B) Turns green</label><br>
+                <label><input type="radio" name="q6" value="C"> C) No change</label><br>
+                <label><input type="radio" name="q6" value="D"> D) Turns yellow</label>
+                <p class="feedback hidden" id="feedback6"></p>
+            </div>
+
+            <div class="question">
+                <p>7. Which base is commonly used in soap making?</p>
+                <label><input type="radio" name="q7" value="A"> A) Calcium hydroxide</label><br>
+                <label><input type="radio" name="q7" value="B"> B) Sodium hydroxide</label><br>
+                <label><input type="radio" name="q7" value="C"> C) Magnesium hydroxide</label><br>
+                <label><input type="radio" name="q7" value="D"> D) Ammonium hydroxide</label>
+                <p class="feedback hidden" id="feedback7"></p>
+            </div>
+
+            <div class="question">
+                <p>8. Which of the following is a strong acid?</p>
+                <label><input type="radio" name="q8" value="A"> A) Acetic acid</label><br>
+                <label><input type="radio" name="q8" value="B"> B) Hydrochloric acid</label><br>
+                <label><input type="radio" name="q8" value="C"> C) Carbonic acid</label><br>
+                <label><input type="radio" name="q8" value="D"> D) Citric acid</label>
+                <p class="feedback hidden" id="feedback8"></p>
+            </div>
+
+            <div class="question">
+                <p>9. Which gas is released when acids react with metal carbonates?</p>
+                <label><input type="radio" name="q9" value="A"> A) Carbon dioxide</label><br>
+                <label><input type="radio" name="q9" value="B"> B) Oxygen</label><br>
+                <label><input type="radio" name="q9" value="C"> C) Hydrogen</label><br>
+                <label><input type="radio" name="q9" value="D"> D) Nitrogen</label>
+                <p class="feedback hidden" id="feedback9"></p>
+            </div>
+
+            <div class="question">
+                <p>10. Which substance is used to neutralize acidity in the stomach?</p>
+                <label><input type="radio" name="q10" value="A"> A) Sulfuric acid</label><br>
+                <label><input type="radio" name="q10" value="B"> B) Sodium chloride</label><br>
+                <label><input type="radio" name="q10" value="C"> C) Magnesium hydroxide</label><br>
+                <label><input type="radio" name="q10" value="D"> D) Calcium hydroxide</label>
+                <p class="feedback hidden" id="feedback10"></p>
+            </div>
+
+            <div class="question">
+                <p>11. Which of the following is an amphoteric substance?</p>
+                <label><input type="radio" name="q11" value="A"> A) NaOH</label><br>
+                <label><input type="radio" name="q11" value="B"> B) Al₂O₃</label><br>
+                <label><input type="radio" name="q11" value="C"> C) H₂SO₄</label><br>
+                <label><input type="radio" name="q11" value="D"> D) NaCl</label>
+                <p class="feedback hidden" id="feedback11"></p>
+            </div>
+
+            <div class="question">
+                <p>12. What happens to a strong acid when dissolved in water?</p>
+                <label><input type="radio" name="q12" value="A"> A) It forms a weak solution</label><br>
+                <label><input type="radio" name="q12" value="B"> B) It turns into a base</label><br>
+                <label><input type="radio" name="q12" value="C"> C) It completely ionizes</label><br>
+                <label><input type="radio" name="q12" value="D"> D) It remains unchanged</label>
+                <p class="feedback hidden" id="feedback12"></p>
+            </div>
+
+            <div class="question">
+                <p>13. What is the pH of an acidic solution?</p>
+                <label><input type="radio" name="q13" value="A"> A) 7</label><br>
+                <label><input type="radio" name="q13" value="B"> B) Greater than 7</label><br>
+                <label><input type="radio" name="q13" value="C"> C) Less than 7</label><br>
+                <label><input type="radio" name="q13" value="D"> D) Equal to 14</label>
+                <p class="feedback hidden" id="feedback13"></p>
+            </div>
+
+            <div class="question">
+                <p>14. Which of the following is NOT a base?</p>
+                <label><input type="radio" name="q14" value="A"> A) HCl</label><br>
+                <label><input type="radio" name="q14" value="B"> B) NaOH</label><br>
+                <label><input type="radio" name="q14" value="C"> C) KOH</label><br>
+                <label><input type="radio" name="q14" value="D"> D) Ca(OH)₂</label>
+                <p class="feedback hidden" id="feedback14"></p>
+            </div>
+
+            <div class="question">
+                <p>15. Which substance is commonly used to remove permanent hardness of water?</p>
+                <label><input type="radio" name="q15" value="A"> A) Sodium hydroxide</label><br>
+                <label><input type="radio" name="q15" value="B"> B) Ammonia</label><br>
+                <label><input type="radio" name="q15" value="C"> C) Washing soda</label><br>
+                <label><input type="radio" name="q15" value="D"> D) Hydrochloric acid</label>
+                <p class="feedback hidden" id="feedback15"></p>
+            </div>
+
+
+            <!-- Add more questions up to 15 -->
+            
+            <button type="button" class="btn" onclick="checkAnswers()">Submit</button>
+        </form>
+
+        <p id="score" class="hidden"></p>
+
+        <a href="mcq2.html" class="btn hidden" id="tryAgain">Try Again</a>
+        <a href="science.html" class="btn hidden" id="completed">Completed</a>
+    </section>
+
+    <script>
+        function checkAnswers() {
+            const answers = {
+                q1: "B",
+                q2: "B",
+                q3: "C",
+                q4: "C",
+                q5: "C",
+                q6: "A",
+                q7: "B",
+                q8: "B",
+                q9: "A",
+                q10: "C",
+                q11: "B",
+                q12: "C",
+                q13: "C",
+                q14: "A",
+                q15: "C"
+            };
+
+            let score = 0;
+            let totalQuestions = Object.keys(answers).length;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                const feedback = document.getElementById(`feedback${i}`);
+
+                if (selectedOption) {
+                    if (selectedOption.value === answers[`q${i}`]) {
+                        feedback.textContent = "Correct!";
+                        feedback.classList.add("correct");
+                        score++;
+                    } else {
+                        const correctAnswer = answers[`q${i}`];
+                        feedback.textContent = `Wrong! The correct answer is: ${correctAnswer}`;
+                        feedback.classList.add("wrong");
+                    }
+                    feedback.classList.remove("hidden");
+                }
+            }
+
+            // Show the final score
+            const scoreElement = document.getElementById("score");
+            scoreElement.textContent = `Your Score: ${score}/${totalQuestions}`;
+            scoreElement.classList.remove("hidden");
+
+            // Show "Try Again" or "Completed" button based on score
+            if (score< 6) {
+                document.getElementById("tryAgain").classList.remove("hidden");
+            } else {
+                document.getElementById("completed").classList.remove("hidden");
+            }
+        }
+    </script>
+</body>
+</html>

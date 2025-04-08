@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Carbon and Its Compounds</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #007BFF;
+        }
+        .question {
+            text-align: left;
+            margin-bottom: 15px;
+        }
+        .feedback {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>MCQ Quiz - Carbon and Its Compounds</h2>
+        <form id="quizForm">
+            <div id="questions"></div>
+            <button type="button" onclick="calculateScore()">Submit</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        const questions = [
+            { q: "The electronic configuration of carbon is 2, 4. How many covalent bonds can carbon form?", options: ["4", "3", "2", "1"], answer: "4" },
+            { q: "Which of the following is a saturated hydrocarbon?", options: ["Ethane", "Ethene", "Ethyne", "Benzene"], answer: "Ethane" },
+            { q: "What is the functional group present in ethanol?", options: ["Hydroxyl", "Carboxyl", "Aldehyde", "Ketone"], answer: "Hydroxyl" },
+            { q: "The reaction of methane with chlorine in the presence of sunlight is an example of:", options: ["Substitution", "Addition", "Elimination", "Oxidation"], answer: "Substitution" },
+            { q: "Which of the following statements about covalent compounds is true?", options: ["They are formed by sharing of electrons", "They are formed by transfer of electrons", "They contain ionic bonds", "They contain metallic bonds"], answer: "They are formed by sharing of electrons" },
+            { q: "Which of the following is the simplest alkane?", options: ["Methane", "Ethane", "Propane", "Butane"], answer: "Methane" },
+            { q: "What is the molecular formula of benzene?", options: ["C6H6", "C2H6", "CH4", "C3H8"], answer: "C6H6" },
+            { q: "Which type of bonding is present in diamond?", options: ["Covalent", "Ionic", "Metallic", "Hydrogen"], answer: "Covalent" },
+            { q: "What is the common name of ethanoic acid?", options: ["Acetic acid", "Formic acid", "Oxalic acid", "Citric acid"], answer: "Acetic acid" },
+            { q: "Which functional group is present in aldehydes?", options: ["-CHO", "-OH", "-COOH", "-NH2"], answer: "-CHO" },
+            { q: "What is the process of conversion of vegetable oil into solid fat called?", options: ["Hydrogenation", "Oxidation", "Fermentation", "Saponification"], answer: "Hydrogenation" },
+            { q: "Which allotrope of carbon is used in making lubricants?", options: ["Graphite", "Diamond", "Fullerene", "Coal"], answer: "Graphite" }
+        ];
+
+        function loadQuestions() {
+            let questionContainer = document.getElementById("questions");
+            questions.forEach((q, index) => {
+                let questionHTML = `<div class="question">
+                    <p>${index + 1}. ${q.q}</p>
+                    <div class="options">
+                        ${q.options.map(option => `<label><input type="radio" name="q${index + 1}" value="${option}"> ${option}</label>`).join('')}
+                    </div>
+                    <p class="feedback" id="feedback${index + 1}"></p>
+                </div>`;
+                questionContainer.innerHTML += questionHTML;
+            });
+        }
+
+        function calculateScore() {
+            let score = 0;
+            questions.forEach((q, index) => {
+                let answer = document.querySelector(`input[name="q${index + 1}"]:checked`);
+                let feedback = document.getElementById(`feedback${index + 1}`);
+                if (answer) {
+                    if (answer.value === q.answer) {
+                        score++;
+                        feedback.innerText = "Correct!";
+                        feedback.className = "feedback correct";
+                    } else {
+                        feedback.innerText = `Incorrect. The correct answer is ${q.answer}.`;
+                        feedback.className = "feedback incorrect";
+                    }
+                }
+            });
+            let resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>Your score: ${score}/${questions.length}</p>`;
+            let button = document.createElement('button');
+            if (score > questions.length / 2) {
+                button.innerText = "Completed";
+                button.onclick = function() { window.location.href = 'science.html'; };
+            } else {
+                button.innerText = "Try Again";
+                button.onclick = function() { location.reload(); };
+            }
+            resultDiv.appendChild(button);
+        }
+        window.onload = loadQuestions;
+    </script>
+</body>
+</html>

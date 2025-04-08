@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Heredity and Evolution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            display: none;
+            text-align: center;
+        }
+        .result button {
+            background-color: #28a745;
+        }
+        .try-again-button {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>MCQ Quiz - Light Chapter</h2>
+        <form id="quizForm">
+            <div class="question" id="q1">
+                <p>1. The image formed by a convex mirror is always:</p>
+                <input type="radio" name="q1" value="a"> A) Real, inverted, and magnified <br>
+                <input type="radio" name="q1" value="b"> B) Virtual, erect, and of the same size as the object <br>
+                <input type="radio" name="q1" value="c"> C) Real, erect, and diminished <br>
+                <input type="radio" name="q1" value="d"> D) Virtual, erect, and diminished <br>
+                <span class="message" id="msg1"></span>
+            </div>
+            
+            <div class="question" id="q2">
+                <p>2. A concave mirror forms a virtual image when the object is placed:</p>
+                <input type="radio" name="q2" value="a"> A) At the center of curvature <br>
+                <input type="radio" name="q2" value="b"> B) Beyond the center of curvature <br>
+                <input type="radio" name="q2" value="c"> C) Between the focus and pole <br>
+                <input type="radio" name="q2" value="d"> D) At infinity <br>
+            </div>
+            <div class="question" id="q3">
+                <p>3. The focal length of a plane mirror is:</p>
+                <input type="radio" name="q3" value="a"> A) Infinite <br>
+                <input type="radio" name="q3" value="b"> B) Positive <br>
+                <input type="radio" name="q3" value="c"> C) Negative <br>
+                <input type="radio" name="q3" value="d"> D) Zero <br>
+            </div>
+            <div class="question" id="q4">
+                <p>4. The power of a convex lens of focal length 20 cm is:</p>
+                <input type="radio" name="q4" value="a"> A) -5D <br>
+                <input type="radio" name="q4" value="b"> B) +5D <br>
+                <input type="radio" name="q4" value="c"> C) +2D <br>
+                <input type="radio" name="q4" value="d"> D) -2D <br>
+            </div>
+            <div class="question" id="q5">
+                <p>5. The refractive index of a medium is given by:</p>
+                <input type="radio" name="q5" value="a"> A) Speed of light in vacuum / Speed of light in medium <br>
+                <input type="radio" name="q5" value="b"> B) Speed of light in medium / Speed of light in vacuum <br>
+                <input type="radio" name="q5" value="c"> C) Frequency of light in vacuum <br>
+                <input type="radio" name="q5" value="d"> D) None of these <br>
+            </div>
+            <div class="question" id="q6">
+                <p>6. Which mirror is used as a rear-view mirror in vehicles?</p>
+                <input type="radio" name="q6" value="a"> A) Concave <br>
+                <input type="radio" name="q6" value="b"> B) Convex <br>
+                <input type="radio" name="q6" value="c"> C) Plane <br>
+                <input type="radio" name="q6" value="d"> D) None <br>
+            </div>
+            <div class="question" id="q7">
+                <p>7. The speed of light is maximum in:</p>
+                <input type="radio" name="q7" value="a"> A) Vacuum <br>
+                <input type="radio" name="q7" value="b"> B) Water <br>
+                <input type="radio" name="q7" value="c"> C) Glass <br>
+                <input type="radio" name="q7" value="d"> D) Diamond <br>
+            </div>
+            <div class="question" id="q8">
+                <p>8. The laws of reflection hold true for:</p>
+                <input type="radio" name="q8" value="a"> A) All reflecting surfaces <br>
+                <input type="radio" name="q8" value="b"> B) Only plane mirrors <br>
+                <input type="radio" name="q8" value="c"> C) Only curved mirrors <br>
+                <input type="radio" name="q8" value="d"> D) Only spherical mirrors <br>
+            </div>
+            <div class="question" id="q9">
+                <p>9. The nature of the image formed by a concave lens is always:</p>
+                <input type="radio" name="q9" value="a"> A) Virtual and erect <br>
+                <input type="radio" name="q9" value="b"> B) Real and inverted <br>
+                <input type="radio" name="q9" value="c"> C) Real and erect <br>
+                <input type="radio" name="q9" value="d"> D) Virtual and magnified <br>
+            </div>
+            <div class="question" id="q10">
+                <p>10. A convex lens is also known as:</p>
+                <input type="radio" name="q10" value="a"> A) Converging lens <br>
+                <input type="radio" name="q10" value="b"> B) Diverging lens <br>
+                <input type="radio" name="q10" value="c"> C) Plano-concave lens <br>
+                <input type="radio" name="q10" value="d"> D) None of these <br>
+            </div>
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+
+        <div class="result">
+            <p id="resultText"></p>
+            <button id="completedButton" class="completedButton" onclick="window.location.href='science.html'">Completed</button>
+            <button id="tryAgainButton" class="try-again-button" onclick="location.reload()">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'd',
+                q2: 'c',
+                q3: 'd',
+                q4: 'b',
+                q5: 'a',
+                q6: 'b',
+                q7: 'a',
+                q8: 'a',
+                q9: 'a',
+                q10: 'a'
+            };
+
+            for (let i = 1; i <= 10; i++) {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            const resultText = document.getElementById("resultText");
+            const completedButton = document.getElementById("completedButton");
+            const tryAgainButton = document.getElementById("tryAgainButton");
+
+            if (score >= 6) {
+                resultText.innerHTML = `You scored ${score} out of 10. Congratulations!`;
+                completedButton.style.display = "inline-block";
+                tryAgainButton.style.display = "none";
+            } else {
+                resultText.innerHTML = `You scored ${score} out of 10. Try again!`;
+                completedButton.style.display = "none";
+                tryAgainButton.style.display = "inline-block";
+            }
+
+            document.querySelector(".result").style.display = "block";
+        }
+    </script>
+</body>
+</html>

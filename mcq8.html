@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs - How Do Organisms Reproduce</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #0d47a1;
+        }
+        .question {
+            margin-bottom: 15px;
+        }
+        .feedback {
+            margin-top: 5px;
+            font-weight: bold;
+        }
+        .correct {
+            color: green;
+        }
+        .wrong {
+            color: red;
+        }
+        button {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #1565c0;
+        }
+    </style>
+    <script>
+        let score = 0;
+
+        function checkAnswer(question, correctAnswer) {
+            let selected = document.querySelector(`input[name="${question}"]:checked`);
+            let feedback = document.getElementById(`${question}-feedback`);
+            if (selected) {
+                if (selected.value === correctAnswer) {
+                    feedback.innerHTML = "Correct Answer!";
+                    feedback.className = "feedback correct";
+                    score++;
+                } else {
+                    feedback.innerHTML = `Wrong Answer! Correct answer is: ${correctAnswer}`;
+                    feedback.className = "feedback wrong";
+                }
+            }
+        }
+
+        function showResult() {
+            let resultContainer = document.getElementById("result-container");
+            if (score >= 6) {
+                resultContainer.innerHTML = "<button onclick=\"location.href='science.html'\">Completed</button>";
+            } else {
+                resultContainer.innerHTML = "<p>Score is less! Try again.</p><button onclick=\"location.reload()\">Try Again</button>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>MCQs - How Do Organisms Reproduce</h2>
+        <script>
+            const questions = [
+                {q: "During favorable conditions, Amoeba reproduces by:", options: ["Multiple fission", "Binary fission", "Budding", "Fragmentation"], answer: "b"},
+                {q: "A feature of reproduction that is common to Amoeba, Yeast, and Spirogyra is that:", options: ["They reproduce asexually", "They are all unicellular", "They reproduce only sexually", "They are all multicellular"], answer: "a"},
+                {q: "In a flower, the parts that produce male and female gametes (germ cells) are:", options: ["Stamen and anther", "Filament and stigma", "Anther and ovary", "Stamen and style"], answer: "c"},
+                {q: "Fruits are formed from the:", options: ["Stamen", "Stigma", "Ovary", "Ovule"], answer: "c"},
+                {q: "Reproduction is essential for living organisms in order to:", options: ["Keep the individual organism alive", "Fulfill their energy requirement", "Maintain growth", "Continue the species generation after generation"], answer: "d"},
+                {q: "The male reproductive parts of a flower, the stamens, are collectively known as:", options: ["Androecium", "Filament", "Anther", "Gynoecium"], answer: "a"},
+                {q: "During sexual reproduction in flowering plants, the fusion of male and female gametes results in the formation of:", options: ["Zygote", "Embryo", "Seed", "Fruit"], answer: "a"},
+                {q: "Which of these organisms reproduce by binary fission?", options: ["Yeast", "Hydra", "Amoeba", "Plasmodium"], answer: "c"},
+                {q: "Which of the following is the correct sequence of events of sexual reproduction in flowering plants?", options: ["Pollination → Fertilization → Seed formation", "Fertilization → Pollination → Seed formation", "Seed formation → Pollination → Fertilization", "Pollination → Seed formation → Fertilization"], answer: "a"},
+                {q: "Which of these is a plant movement due to touch?", options: ["Phototropism", "Thigmotropism", "Geotropism", "Hydrotropism"], answer: "b"}
+            ];
+
+            document.write('<div>');
+            questions.forEach((q, index) => {
+                document.write(`<div class='question'>${index + 1}. ${q.q}<br>`);
+                q.options.forEach((opt, optIndex) => {
+                    const optValue = String.fromCharCode(97 + optIndex);
+                    document.write(`<input type='radio' name='q${index + 1}' value='${optValue}'> ${optValue}) ${opt}<br>`);
+                });
+                document.write(`<button onclick="checkAnswer('q${index + 1}', '${q.answer}')">Check Answer</button>`);
+                document.write(`<div id='q${index + 1}-feedback' class='feedback'></div></div>`);
+            });
+            document.write('</div>');
+        </script>
+        <button onclick="location.href='faq7.html'">Previous Page</button>
+        <button onclick="showResult()">Submit</button>
+        <div id="result-container"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Processes - MCQ</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #000;
+        }
+        .question {
+            margin: 15px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .correct {
+            color: #00ff00;
+        }
+        .wrong {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Life Processes - MCQs</h2>
+        <form id="quizForm">
+            <!-- Questions will be inserted here dynamically -->
+        </form>
+        <button onclick="submitQuiz()">Submit</button>
+        <div id="score"></div>
+        <button id="retry" onclick="location.reload()" style="display: none;">Try Again</button>
+        <button id="complete" onclick="window.location.href='science.html'" style="display: none;">Completed</button>
+    </div>
+
+    <script>
+        const questions = [
+            { q: "What is the basic unit of life?", options: ["Tissue", "Organ", "Cell", "Organism"], correct: 2 },
+            { q: "Which process is used by green plants to prepare their food?", options: ["Respiration", "Photosynthesis", "Digestion", "Excretion"], correct: 1 },
+            { q: "Which organ helps in pumping blood throughout the body?", options: ["Liver", "Lungs", "Heart", "Kidney"], correct: 2 },
+            { q: "Which gas is used in photosynthesis?", options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Hydrogen"], correct: 1 },
+            { q: "Which part of the digestive system absorbs nutrients?", options: ["Stomach", "Small Intestine", "Large Intestine", "Esophagus"], correct: 1 },
+            { q: "Which organ removes waste from blood?", options: ["Heart", "Liver", "Kidney", "Lungs"], correct: 2 },
+            { q: "What is the main function of red blood cells?", options: ["Transport oxygen", "Fight infections", "Clot blood", "Digest food"], correct: 0 },
+            { q: "Which part of the plant absorbs water?", options: ["Stem", "Leaves", "Roots", "Flower"], correct: 2 },
+            { q: "Which system controls body functions using hormones?", options: ["Nervous System", "Endocrine System", "Respiratory System", "Excretory System"], correct: 1 },
+            { q: "Which part of the human brain controls balance and coordination?", options: ["Cerebrum", "Cerebellum", "Medulla", "Hypothalamus"], correct: 1 }
+        ];
+
+        const form = document.getElementById("quizForm");
+        questions.forEach((q, i) => {
+            let div = document.createElement("div");
+            div.className = "question";
+            div.innerHTML = `<p>${i + 1}. ${q.q}</p>`;
+            q.options.forEach((option, index) => {
+                div.innerHTML += `<input type="radio" name="q${i}" value="${index}"> ${option}<br>`;
+            });
+            div.innerHTML += `<p class='result' id='result${i}'></p>`;
+            form.appendChild(div);
+        });
+
+        function submitQuiz() {
+            let score = 0;
+            questions.forEach((q, i) => {
+                let selected = document.querySelector(`input[name=q${i}]:checked`);
+                let result = document.getElementById(`result${i}`);
+                if (selected) {
+                    if (parseInt(selected.value) === q.correct) {
+                        score++;
+                        result.innerHTML = "Correct!";
+                        result.className = "result correct";
+                    } else {
+                        result.innerHTML = `Wrong! The correct answer is: ${q.options[q.correct]}`;
+                        result.className = "result wrong";
+                    }
+                }
+            });
+            document.getElementById("score").innerHTML = `Your Score: ${score}/10`;
+            
+            if (score < 6) {
+                document.getElementById("retry").style.display = "inline";
+            } else {
+                document.getElementById("complete").style.display = "inline";
+            }
+        }
+    </script>
+</body>
+</html>

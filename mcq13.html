@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs - Magnetic Effects of Electric Current</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        header {
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 24px;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #1e1e1e;
+            box-shadow: 0px 0px 10px rgba(0, 162, 255, 0.5);
+            border-radius: 10px;
+        }
+
+        h2 {
+            color: #4fc3f7;
+        }
+
+        .question {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        /* Buttons */
+        .btn {
+            background-color: #0d47a1;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1565c0;
+        }
+
+        #submitBtn, #tryAgainBtn, #completedBtn {
+            display: block;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MCQs - Magnetic Effects of Electric Current</h1>
+    </header>
+
+    <section class="content">
+        <h2>Answer the following MCQs:</h2>
+
+        <form id="quizForm">
+            <div class="question">
+                <p>1. What is the shape of the magnetic field lines around a straight current-carrying conductor?</p>
+                <label><input type="radio" name="q1" value="A"> A) Circular</label>
+                <label><input type="radio" name="q1" value="B"> B) Parallel</label>
+                <label><input type="radio" name="q1" value="C"> C) Elliptical</label>
+                <label><input type="radio" name="q1" value="D"> D) Random</label>
+            </div>
+
+            <div class="question">
+                <p>2. Who discovered that a current-carrying conductor produces a magnetic field?</p>
+                <label><input type="radio" name="q2" value="A"> A) Michael Faraday</label>
+                <label><input type="radio" name="q2" value="B"> B) Hans Christian Oersted</label>
+                <label><input type="radio" name="q2" value="C"> C) James Clerk Maxwell</label>
+                <label><input type="radio" name="q2" value="D"> D) Isaac Newton</label>
+            </div>
+
+            <div class="question">
+                <p>3. The strength of the magnetic field around a current-carrying conductor depends on?</p>
+                <label><input type="radio" name="q3" value="A"> A) The length of the wire</label>
+                <label><input type="radio" name="q3" value="B"> B) The amount of current</label>
+                <label><input type="radio" name="q3" value="C"> C) The type of metal used</label>
+                <label><input type="radio" name="q3" value="D"> D) The direction of current</label>
+            </div>
+
+            <div class="question">
+                <p>4. A solenoid is used to?</p>
+                <label><input type="radio" name="q4" value="A"> A) Convert current to voltage</label>
+                <label><input type="radio" name="q4" value="B"> B) Create a uniform magnetic field</label>
+                <label><input type="radio" name="q4" value="C"> C) Reduce resistance</label>
+                <label><input type="radio" name="q4" value="D"> D) Store electricity</label>
+            </div>
+
+            <div class="question">
+                <p>5. The direction of the magnetic field around a wire is determined by?</p>
+                <label><input type="radio" name="q5" value="A"> A) Fleming's Left Hand Rule</label>
+                <label><input type="radio" name="q5" value="B"> B) Right-Hand Thumb Rule</label>
+                <label><input type="radio" name="q5" value="C"> C) Fleming's Right Hand Rule</label>
+                <label><input type="radio" name="q5" value="D"> D) Ampere's Law</label>
+            </div>
+            <div class="question">
+    <p>6. The strength of the magnetic field around a current-carrying conductor is?</p>
+    <input type="radio" name="q6" value="A"> A) Same everywhere<br>
+    <input type="radio" name="q6" value="B"> B) Stronger closer to the conductor<br>
+    <input type="radio" name="q6" value="C"> C) Stronger farther from the conductor<br>
+    <input type="radio" name="q6" value="D"> D) Independent of distance<br>
+</div>
+
+<div class="question">
+    <p>7. The SI unit of magnetic field strength is?</p>
+    <input type="radio" name="q7" value="A"> A) Tesla<br>
+    <input type="radio" name="q7" value="B"> B) Newton<br>
+    <input type="radio" name="q7" value="C"> C) Weber<br>
+    <input type="radio" name="q7" value="D"> D) Ampere per meter<br>
+</div>
+
+<div class="question">
+    <p>8. A magnetic field is produced by?</p>
+    <input type="radio" name="q8" value="A"> A) A moving charge<br>
+    <input type="radio" name="q8" value="B"> B) A stationary charge<br>
+    <input type="radio" name="q8" value="C"> C) Insulating materials<br>
+    <input type="radio" name="q8" value="D"> D) Only permanent magnets<br>
+</div>
+
+<div class="question">
+    <p>9. The direction of force on a current-carrying conductor in a magnetic field is given by?</p>
+    <input type="radio" name="q9" value="A"> A) Fleming’s left-hand rule<br>
+    <input type="radio" name="q9" value="B"> B) Fleming’s right-hand rule<br>
+    <input type="radio" name="q9" value="C"> C) Right-hand thumb rule<br>
+    <input type="radio" name="q9" value="D"> D) Maxwell’s rule<br>
+</div>
+
+<div class="question">
+    <p>10. The principle of an electric motor is based on?</p>
+    <input type="radio" name="q10" value="A"> A) Magnetic effects of current<br>
+    <input type="radio" name="q10" value="B"> B) Electrostatic induction<br>
+    <input type="radio" name="q10" value="C"> C) Heating effects of current<br>
+    <input type="radio" name="q10" value="D"> D) Electromagnetic induction<br>
+</div>
+
+<div class="question">
+    <p>11. Which of the following devices works on the principle of electromagnetic induction?</p>
+    <input type="radio" name="q11" value="A"> A) Electric motor<br>
+    <input type="radio" name="q11" value="B"> B) Electric generator<br>
+    <input type="radio" name="q11" value="C"> C) Ammeter<br>
+    <input type="radio" name="q11" value="D"> D) Voltmeter<br>
+</div>
+
+<div class="question">
+    <p>12. In a DC motor, the function of the commutator is to?</p>
+    <input type="radio" name="q12" value="A"> A) Reduce friction<br>
+    <input type="radio" name="q12" value="B"> B) Reverse the direction of current<br>
+    <input type="radio" name="q12" value="C"> C) Increase speed<br>
+    <input type="radio" name="q12" value="D"> D) Generate electricity<br>
+</div>
+
+<div class="question">
+    <p>13. The core of an electromagnet is usually made of?</p>
+    <input type="radio" name="q13" value="A"> A) Copper<br>
+    <input type="radio" name="q13" value="B"> B) Soft iron<br>
+    <input type="radio" name="q13" value="C"> C) Aluminum<br>
+    <input type="radio" name="q13" value="D"> D) Steel<br>
+</div>
+
+<div class="question">
+    <p>14. What happens when the direction of current in a solenoid is reversed?</p>
+    <input type="radio" name="q14" value="A"> A) Magnetic field increases<br>
+    <input type="radio" name="q14" value="B"> B) Magnetic field disappears<br>
+    <input type="radio" name="q14" value="C"> C) Magnetic poles are reversed<br>
+    <input type="radio" name="q14" value="D"> D) No effect<br>
+</div>
+
+            
+
+            <!-- Add more questions from 6 to 15 here -->
+
+            <div class="question">
+                <p>15. Which of the following is NOT an application of the magnetic effect of electric current?</p>
+                <label><input type="radio" name="q15" value="A"> A) Electric bell</label>
+                <label><input type="radio" name="q15" value="B"> B) Electric motor</label>
+                <label><input type="radio" name="q15" value="C"> C) Loudspeaker</label>
+                <label><input type="radio" name="q15" value="D"> D) Solar panel</label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="button" id="submitBtn" class="btn" onclick="checkScore()">Submit</button>
+
+            <!-- Result Display -->
+            <div id="result"></div>
+
+            <!-- Buttons for Completion -->
+            <button type="button" id="tryAgainBtn" class="btn" style="display:none;" onclick="window.location.reload()">Try Again</button>
+            <a href="science.html" id="completedBtn" class="btn" style="display:none;">Completed</a>
+        </form>
+    </section>
+
+    <script>
+        function checkScore() {
+            let answers = {
+              q1: "A", // Circular
+              q2: "B", // Hans Christian Oersted
+              q3: "B", // The amount of current
+              q4: "B", // Create a uniform magnetic field
+              q5: "B", // Right-Hand Thumb Rule
+              q6: "B", // Stronger closer to the conductor
+              q7: "A", // Tesla
+              q8: "A", // A moving charge
+              q9: "A", // Fleming’s left-hand rule
+              q10: "A", // Magnetic effects of current
+              q11: "B", // Electric generator
+              q12: "B", // Reverse the direction of current
+              q13: "B", // Soft iron
+              q14: "C", // Magnetic poles are reversed
+              q15: "D"  // Solar panel (Not related to magnetism
+            };
+
+            let score = 0;
+            let totalQuestions = 15;
+
+            for (let i = 1; i <= totalQuestions; i++) {
+                let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selectedOption && selectedOption.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            let resultText = `Your score: ${score}/${totalQuestions}`;
+            document.getElementById("result").innerHTML = resultText;
+
+            if (score >= 8) {
+                document.getElementById("completedBtn").style.display = "block";
+                document.getElementById("tryAgainBtn").style.display = "none";
+            } else {
+                document.getElementById("tryAgainBtn").style.display = "block";
+                document.getElementById("completedBtn").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Quiz - Heredity and Evolution</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        .options {
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            margin: 5px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            display: none;
+            text-align: center;
+        }
+        .result button {
+            background-color: #28a745;
+        }
+        .try-again-button {
+            background-color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>MCQ Quiz - Heredity and Evolution</h1>
+        <form id="quizForm">
+            <div class="question">
+                <label>1. What is heredity?</label>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="A"> Transmission of characteristics from parents to offspring.</label>
+                    <label><input type="radio" name="q1" value="B"> Process of mutation.</label>
+                    <label><input type="radio" name="q1" value="C"> Growth of an organism.</label>
+                    <label><input type="radio" name="q1" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>2. Which is the genetic material in humans?</label>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="A"> RNA</label>
+                    <label><input type="radio" name="q2" value="B"> DNA</label>
+                    <label><input type="radio" name="q2" value="C"> Protein</label>
+                    <label><input type="radio" name="q2" value="D"> Lipids</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>3. What is a gene?</label>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="A"> A part of the chromosome responsible for inheritance of traits.</label>
+                    <label><input type="radio" name="q3" value="B"> A type of cell division.</label>
+                    <label><input type="radio" name="q3" value="C"> A form of mutation.</label>
+                    <label><input type="radio" name="q3" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>4. What are alleles?</label>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="A"> Different forms of a gene.</label>
+                    <label><input type="radio" name="q4" value="B"> Types of mutations.</label>
+                    <label><input type="radio" name="q4" value="C"> A type of cell.</label>
+                    <label><input type="radio" name="q4" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>5. What is the role of DNA in heredity?</label>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="A"> It carries the genetic information that is passed from one generation to the next.</label>
+                    <label><input type="radio" name="q5" value="B"> It is responsible for the formation of proteins.</label>
+                    <label><input type="radio" name="q5" value="C"> It determines the structure of the cell membrane.</label>
+                    <label><input type="radio" name="q5" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>6. What is a dominant allele?</label>
+                <div class="options">
+                    <label><input type="radio" name="q6" value="A"> An allele that expresses its trait even in the presence of a recessive allele.</label>
+                    <label><input type="radio" name="q6" value="B"> An allele that is masked by a dominant allele.</label>
+                    <label><input type="radio" name="q6" value="C"> An allele that always appears in a homozygous state.</label>
+                    <label><input type="radio" name="q6" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>7. Which of the following is an example of a genetic disorder?</label>
+                <div class="options">
+                    <label><input type="radio" name="q7" value="A"> Sickle cell anemia</label>
+                    <label><input type="radio" name="q7" value="B"> Malaria</label>
+                    <label><input type="radio" name="q7" value="C"> Tuberculosis</label>
+                    <label><input type="radio" name="q7" value="D"> Asthma</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>8. What is a recessive allele?</label>
+                <div class="options">
+                    <label><input type="radio" name="q8" value="A"> An allele that only expresses its trait in the absence of a dominant allele.</label>
+                    <label><input type="radio" name="q8" value="B"> An allele that always expresses its trait regardless of the other allele.</label>
+                    <label><input type="radio" name="q8" value="C"> An allele that does not affect the organism's traits.</label>
+                    <label><input type="radio" name="q8" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>9. Which scientist is known for developing the theory of natural selection?</label>
+                <div class="options">
+                    <label><input type="radio" name="q9" value="A"> Charles Darwin</label>
+                    <label><input type="radio" name="q9" value="B"> Gregor Mendel</label>
+                    <label><input type="radio" name="q9" value="C"> Louis Pasteur</label>
+                    <label><input type="radio" name="q9" value="D"> Carl Linnaeus</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <label>10. What is evolution?</label>
+                <div class="options">
+                    <label><input type="radio" name="q10" value="A"> Changes in species over time.</label>
+                    <label><input type="radio" name="q10" value="B"> A sudden change in an organism.</label>
+                    <label><input type="radio" name="q10" value="C"> Reproduction of organisms.</label>
+                    <label><input type="radio" name="q10" value="D"> None of the above.</label>
+                </div>
+            </div>
+
+            <button type="button" onclick="submitQuiz()">Submit</button>
+        </form>
+
+        <div class="result">
+            <p id="resultText"></p>
+            <button id="completedButton" class="completedButton" onclick="window.location.href='science.html'">Completed</button>
+            <button id="tryAgainButton" class="try-again-button" onclick="location.reload()">Try Again</button>
+        </div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            let score = 0;
+            const answers = {
+                q1: 'A',
+                q2: 'B',
+                q3: 'A',
+                q4: 'A',
+                q5: 'A',
+                q6: 'A',
+                q7: 'A',
+                q8: 'A',
+                q9: 'A',
+                q10: 'A'
+            };
+
+            for (let i = 1; i <= 10; i++) {
+                let selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === answers[`q${i}`]) {
+                    score++;
+                }
+            }
+
+            const resultText = document.getElementById("resultText");
+            const completedButton = document.getElementById("completedButton");
+            const tryAgainButton = document.getElementById("tryAgainButton");
+
+            if (score >= 6) {
+                resultText.innerHTML = `You scored ${score} out of 10. Congratulations!`;
+                completedButton.style.display = "inline-block";
+                tryAgainButton.style.display = "none";
+            } else {
+                resultText.innerHTML = `You scored ${score} out of 10. Try again!`;
+                completedButton.style.display = "none";
+                tryAgainButton.style.display = "inline-block";
+            }
+
+            document.querySelector(".result").style.display = "block";
+        }
+    </script>
+</body>
+</html>
+

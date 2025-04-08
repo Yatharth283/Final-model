@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Quiz</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: white;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .quiz-container {
+            width: 50%;
+            margin: auto;
+            background: #1e1e1e;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .question {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+        .options label {
+            display: block;
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #444;
+            color: white;
+            border: none;
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .result {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        .try-again {
+            background-color: #FF5733;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .completed {
+            background-color: #28A745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="quiz-container">
+        <h2>Electricity Quiz</h2>
+        <form id="quizForm">
+            <div id="quiz"></div>
+            <button type="button" class="submit-btn" onclick="submitQuiz()">Submit</button>
+        </form>
+        <p class="result" id="result"></p>
+    </div>
+    <script>
+        const questions = [
+            { q: "The SI unit of electric charge is:", options: ["Volt", "Ampere", "Coulomb", "Ohm"], answer: "Coulomb" },
+            { q: "The flow of electric charge in a circuit is called:", options: ["Voltage", "Resistance", "Current", "Capacitance"], answer: "Current" },
+            { q: "The SI unit of electric current is:", options: ["Volt", "Coulomb", "Ampere", "Ohm"], answer: "Ampere" },
+            { q: "The instrument used to measure electric current is:", options: ["Voltmeter", "Ammeter", "Ohmmeter", "Galvanometer"], answer: "Ammeter" },
+            { q: "The potential difference is measured in:", options: ["Ohms", "Amperes", "Volts", "Watts"], answer: "Volts" },
+            { q: "Ohm’s Law is given by:", options: ["V = IR", "I = VR", "R = VI", "P = VI"], answer: "V = IR" },
+            { q: "If resistance doubles, current will:", options: ["Same", "Half", "Double", "Zero"], answer: "Half" },
+            { q: "A closed conducting path is called:", options: ["Battery", "Resistance", "Circuit", "Charge"], answer: "Circuit" },
+            { q: "The SI unit of electrical resistance is:", options: ["Ohm", "Ampere", "Volt", "Watt"], answer: "Ohm" },
+            { q: "The heating effect of electric current is given by:", options: ["Joule’s Law", "Newton’s Law", "Faraday’s Law", "Ampere’s Law"], answer: "Joule’s Law" }
+        ];
+        
+        function loadQuiz() {
+            const quizEl = document.getElementById("quiz");
+            quizEl.innerHTML = "";
+            questions.forEach((q, index) => {
+                const questionHTML = `<p class='question'>${index + 1}. ${q.q}</p>`;
+                let optionsHTML = "";
+                q.options.forEach(option => {
+                    optionsHTML += `<label><input type='radio' name='q${index}' value='${option}'> ${option}</label>`;
+                });
+                quizEl.innerHTML += questionHTML + optionsHTML;
+            });
+        }
+        
+        function submitQuiz() {
+            let score = 0;
+            questions.forEach((q, index) => {
+                const selected = document.querySelector(`input[name='q${index}']:checked`);
+                if (selected && selected.value === q.answer) {
+                    score++;
+                }
+            });
+            showResult(score);
+        }
+        
+        function showResult(score) {
+            const resultEl = document.getElementById("result");
+            if (score >= 6) {
+                resultEl.innerHTML = `Score: ${score}/10 - <button class='completed' onclick="location.href='science.html'">Completed</button>`;
+            } else {
+                resultEl.innerHTML = `Score: ${score}/10 - <button class='try-again' onclick="location.reload()">Try Again</button>`;
+            }
+        }
+        
+        loadQuiz();
+    </script>
+</body>
+</html>

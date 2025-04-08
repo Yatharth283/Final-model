@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQs - Chemical Reactions and Equations</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function checkAnswers() {
+            let score = 0;
+            const answers = {
+                q1: "b",
+                q2: "c",
+                q3: "a",
+                q4: "d",
+                q5: "b",
+                q6: "c",
+                q7: "a",
+                q8: "b",
+                q9: "c",
+                q10: "d"
+            };
+
+            for (let i = 1; i <= 10; i++) {
+                let selectedOption = document.querySelector(`input[name="q${i}"]:checked`);
+                let feedback = document.getElementById(`feedback${i}`);
+
+                if (selectedOption) {
+                    if (selectedOption.value === answers[`q${i}`]) {
+                        feedback.innerHTML = "✔ Correct!";
+                        feedback.style.color = "green";
+                        score++;
+                    } else {
+                        feedback.innerHTML = `✖ Wrong! The correct answer is: ${answers[`q${i}`].toUpperCase()}`;
+                        feedback.style.color = "red";
+                    }
+                } else {
+                    feedback.innerHTML = `✖ No answer selected! The correct answer is: ${answers[`q${i}`].toUpperCase()}`;
+                    feedback.style.color = "red";
+                }
+            }
+
+            let resultSection = document.getElementById("result");
+            resultSection.innerHTML = `<h3>Your Score: ${score}/10</h3>`;
+
+            let retryButton = document.getElementById("retry");
+            let completeButton = document.getElementById("complete");
+
+            if (score >= 6) {
+                completeButton.style.display = "block";
+                retryButton.style.display = "none";
+            } else {
+                retryButton.style.display = "block";
+                completeButton.style.display = "none";
+            }
+        }
+
+        function retryQuiz() {
+            location.reload();
+        }
+
+        function completeQuiz() {
+            window.location.href = "science.html";
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Silence - Class 10 Science</h1>
+    </header>
+
+    <h2>Multiple Choice Questions - Chapter 1</h2>
+
+    <section class="content">
+        <form id="quizForm">
+            <h3>1️⃣ Which of the following is a chemical change?</h3>
+            <input type="radio" name="q1" value="a"> (a) Melting of ice <br>
+            <input type="radio" name="q1" value="b"> (b) Burning of paper <br>
+            <input type="radio" name="q1" value="c"> (c) Breaking of glass <br>
+            <input type="radio" name="q1" value="d"> (d) Dissolving salt in water <br>
+            <p id="feedback1"></p>
+
+            <h3>2️⃣ What is a balanced chemical equation?</h3>
+            <input type="radio" name="q2" value="a"> (a) Same number of molecules on both sides <br>
+            <input type="radio" name="q2" value="b"> (b) Different number of atoms on both sides <br>
+            <input type="radio" name="q2" value="c"> (c) Same number of atoms of each element on both sides <br>
+            <input type="radio" name="q2" value="d"> (d) Any equation <br>
+            <p id="feedback2"></p>
+
+            <h3>3️⃣ Which type of reaction is 2H₂ + O₂ → 2H₂O?</h3>
+            <input type="radio" name="q3" value="a"> (a) Combination reaction <br>
+            <input type="radio" name="q3" value="b"> (b) Decomposition reaction <br>
+            <input type="radio" name="q3" value="c"> (c) Displacement reaction <br>
+            <input type="radio" name="q3" value="d"> (d) Redox reaction <br>
+            <p id="feedback3"></p>
+
+            <h3>4️⃣ What is a displacement reaction?</h3>
+            <input type="radio" name="q4" value="a"> (a) When a compound breaks into simpler substances <br>
+            <input type="radio" name="q4" value="b"> (b) When two elements combine to form a new compound <br>
+            <input type="radio" name="q4" value="c"> (c) When oxygen is added to a substance <br>
+            <input type="radio" name="q4" value="d"> (d) When a more reactive element replaces a less reactive element <br>
+            <p id="feedback4"></p>
+
+            <h3>5️⃣ What is the product of Zn + CuSO₄?</h3>
+            <input type="radio" name="q5" value="a"> (a) ZnO + Cu <br>
+            <input type="radio" name="q5" value="b"> (b) ZnSO₄ + Cu <br>
+            <input type="radio" name="q5" value="c"> (c) ZnCl₂ + H₂ <br>
+            <input type="radio" name="q5" value="d"> (d) Zn + CuO <br>
+            <p id="feedback5"></p>
+
+            <h3>6️⃣ What is a double displacement reaction?</h3>
+            <input type="radio" name="q6" value="a"> (a) When two elements combine <br>
+            <input type="radio" name="q6" value="b"> (b) When a metal reacts with acid <br>
+            <input type="radio" name="q6" value="c"> (c) When two compounds exchange ions <br>
+            <input type="radio" name="q6" value="d"> (d) When oxygen is removed from a compound <br>
+            <p id="feedback6"></p>
+
+            <h3>7️⃣ What is oxidation?</h3>
+            <input type="radio" name="q7" value="a"> (a) Addition of oxygen or loss of electrons <br>
+            <input type="radio" name="q7" value="b"> (b) Removal of oxygen <br>
+            <input type="radio" name="q7" value="c"> (c) Addition of hydrogen <br>
+            <input type="radio" name="q7" value="d"> (d) Exchange of ions <br>
+            <p id="feedback7"></p>
+
+            <h3>8️⃣ What is corrosion?</h3>
+            <input type="radio" name="q8" value="a"> (a) Process of burning <br>
+            <input type="radio" name="q8" value="b"> (b) Slow destruction of metals due to oxidation <br>
+            <input type="radio" name="q8" value="c"> (c) Process of melting metals <br>
+            <input type="radio" name="q8" value="d"> (d) Formation of rust only on iron <br>
+            <p id="feedback8"></p>
+            
+            <h3>9️⃣ What is rancidity? How can it be prevented?</h3>
+            <input type="radio" name="q9" value="a"> (a) Process of metal corrosion <br>
+            <input type="radio" name="q9" value="b"> (b) Process of breaking bonds in food <br>
+            <input type="radio" name="q9" value="c"> (c) Spoilage of food due to oxidation <br>
+            <input type="radio" name="q9" value="d"> (d) Heating of oil to high temperatures <br>
+            <p id="feedback9"></p>
+
+
+            <h3>🔟 What is the product of Zn + H₂SO₄?</h3>
+            <input type="radio" name="q10" value="a"> (a) ZnO + H₂ <br>
+            <input type="radio" name="q10" value="b"> (b) ZnCl₂ + H₂ <br>
+            <input type="radio" name="q10" value="c"> (c) Zn(OH)₂ + H₂ <br>
+            <input type="radio" name="q10" value="d"> (d) ZnSO₄ + H₂ <br>
+            <p id="feedback10"></p>
+
+        </form>
+
+        <button onclick="checkAnswers()">Submit</button>
+        <button id="retry" style="display:none;" onclick="retryQuiz()">Try Again</button>
+        <button id="complete" style="display:none;" onclick="completeQuiz()">Completed</button>
+
+        <div id="result"></div>
+    </section>
+</body>
+</html>
